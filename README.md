@@ -60,6 +60,8 @@ set via variables at the top of the script, edit before running if you want.
 
 <img width="1140" height="201" alt="image" src="https://github.com/user-attachments/assets/296721af-9eb3-4524-a78c-2b5d37987d7c" />
 
+So in the TFTP.EXE example, because we don't have the correct privileges to see who or what is executing TFTP.EXE, we can assume that it is being run by SYSTEM or Administrator. Then from there, we just need to find the TFTP.EXE binary on the system and see if there is a privilege escalation oppurtunity around that.
+
 ## Disclaimers
 
 - This script was written with the assistance of Claude. If you are upset over that, oh well.
