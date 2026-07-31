@@ -7,6 +7,8 @@ work (scheduled tasks, services, or custom loops that relaunch a binary
 on an interval), the kind of thing that's easy to miss if you're just
 eyeballing Task Manager or polling `Get-Process` by hand.
 
+pspy: https://github.com/dominicbreuker/pspy
+
 Windows has no `/proc` equivalent, so unlike Linux `pspy` this can't
 read a live process table for free. ScheduledSpy works by polling `Win32_Process`
 on a short interval and diffing snapshots to catch new PIDs the moment
