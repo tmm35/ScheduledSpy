@@ -1,6 +1,6 @@
 # ScheduledSpy
 
-A pspy-style process execution monitor for Windows. Watches for newly
+A pspy-style process execution monitor for Windows. Similar to Sysinternal's Procmon, but in the command line. No GUI access required. The tool watches for newly
 spawned processes and prints them as they happen. This was built for catching
 short-lived or periodic executions during Windows privilege escalation
 work (scheduled tasks, services, or custom loops that relaunch a binary
