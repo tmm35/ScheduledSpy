@@ -2,11 +2,10 @@ $ErrorActionPreference = 'SilentlyContinue'
 $IntervalMs  = 100
 $Date = Get-Date -Format "HH:mm:ss"
 
-# Process names to skip entirely - both as the new process itself AND as its
-# parent, since Chrome's multi-process model means most of the noise is
-# renderer/GPU/utility children spawned BY chrome.exe, not chrome.exe itself.
+# Process names to skip entirely
 $ExcludeNames = @('chrome.exe')
 
+# Banner
 $consoleWidth = 80
 try { $consoleWidth = $Host.UI.RawUI.WindowSize.Width } catch {}
 
@@ -40,7 +39,7 @@ function Get-ProcOwner {
     return "unknown"
 }
 
-# Track previous PID set - just IDs, not full objects, keeps the diff cheap.
+# Track previous PID set
 $prevPids = New-Object System.Collections.Generic.HashSet[int]
 foreach ($p in (Get-CimInstance Win32_Process -Property ProcessId)) { [void]$prevPids.Add($p.ProcessId) }
 
